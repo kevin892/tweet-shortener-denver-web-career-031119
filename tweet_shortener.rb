@@ -41,9 +41,9 @@ def word_substituter(tweet)
 end
 
 
-def bulk_tweet_shortener(tweets_array)
+def bulk_tweet_shortener(array)
 
-  tweets_array.collect do |tweet|
+  array.map do |tweet|
     puts word_substituter(tweet)
   end
 end
@@ -61,7 +61,7 @@ end
 
 def shortened_tweet_truncator(tweet)
   if word_substituter(tweet).chars.length > 140
-    truncated = word_substituter(tweet).chars[0..136].push("...").join("")
+    tru = word_substituter(tweet).chars[0..136].push("...").join("")
   else
     word_substituter(tweet)
   end
